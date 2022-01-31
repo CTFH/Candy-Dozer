@@ -6,8 +6,9 @@ public class Shooter : MonoBehaviour
 {
     public GameObject[] candyPrefabs;//GameObject型でプレハブ登録
     public Transform candyParentTransform;//親子関係を結びたい　
-    //GameObject型にするとcandy Parent
-    //transform.parent=candyParent.transformにしないといけない
+    //GameObject型にするとcandyParent
+    //candy.transform.parent=getComponent<Transform>();
+    //またはcandyParent.transformにしないといけない
     //(getComponet.transformだけど、transoformだから省略できる)
     //親にしたいオブジェクトのTransform componentが必要
     public float shotForce;
@@ -64,7 +65,7 @@ public class Shooter : MonoBehaviour
         //生成したCandyオブジェクトの親をcandyParentTransformに設定する
         candy.transform.parent = candyParentTransform;
         //親子関係結ぶときはtransformをかませる
-       //親になるオブジェクトを設定する際には、TransformParentのプロパティに、親になるGameobjectのTransformを代入
+       //親になるオブジェクトを設定する際には、Transform.Parentのプロパティに、親になるGameobjectのTransformを代入
 
         //CandyオブジェクトのRigidbodyを取得し力と回転を加える
         Rigidbody candyRigidBody = candy.GetComponent<Rigidbody>();//candyのrigidbodyにアクセス

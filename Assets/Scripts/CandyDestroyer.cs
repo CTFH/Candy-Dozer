@@ -5,7 +5,8 @@ using UnityEngine;
 public class CandyDestroyer : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
-       
+       //isTriggerなコライダーをもったゲームオブジェクトに足して作用する
+       //メソッドがmonoBehaviorにあって、それをオーバーライドしている
     {
         if(other.gameObject.tag=="Candy")
             {
