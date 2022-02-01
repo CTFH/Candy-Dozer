@@ -11,6 +11,17 @@ public class Shooter : MonoBehaviour
     //またはcandyParent.transformにしないといけない
     //(getComponet.transformだけど、transoformだから省略できる)
     //親にしたいオブジェクトのTransform componentが必要
+    public CandyManager candyManager;
+    //CandyManagerコンポーネントを持ったゲームオブジェクトをインスペクター上から登録できるようになる
+    //登録しないとNullのまま　
+    //shooterからcandyManagerを使えるようにする
+    //staticを使ったら上記しなくてもクラス名.で使用可能
+    //staticはみんなで１つの情報を共有しているがgameOBject作る方法はそれぞれが
+    //それぞれの情報を持っている
+    
+    //createemptyしてスクリプトをアタッチしてシーンに登場したらインスタンス化
+    //staticはインスタンス化必要ない
+
     public float shotForce;
     public float shotTorque;//Toeque回転する力、回転力
     public float baseWidth;//StageObjectのBase（作成したやつ）のwidth
@@ -44,7 +55,14 @@ public class Shooter : MonoBehaviour
         //画面の右端クリックしたらbase Widthの右端から発射するようにする
     }
     public void Shot()
+        
     {
+        Debug.Log(hoge.num);
+        hoge.num++;
+        //キャンディを生成できる条件外ならばShotしない
+        if (candyManager.GetCandyAmount() <= 0) return;
+
+
         //プレハブからキャンディオブジェクトを生成
         GameObject candy = (GameObject)Instantiate(//引数３つ
             SampleCandy(),
@@ -73,5 +91,8 @@ public class Shooter : MonoBehaviour
         //transform.forward自分が向いている方向に shotForce力を加える
         candyRigidBody.AddTorque(new Vector3(0, shotTorque, 0));
         //回転力を与える
+
+        //Candyのストックを消費
+        candyManager.ConsumeCandy();
     }
 }
