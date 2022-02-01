@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    const int MaxShotPower = 5;
+    const int RecoverySeconds = 3;
+
+    int shotPower = MaxShotPower;
+
     public GameObject[] candyPrefabs;//GameObject型でプレハブ登録
     public Transform candyParentTransform;//親子関係を結びたい　
     //GameObject型にするとcandyParent
@@ -61,7 +66,9 @@ public class Shooter : MonoBehaviour
         hoge.num++;
         //キャンディを生成できる条件外ならばShotしない
         if (candyManager.GetCandyAmount() <= 0) return;
-
+        
+        //現在のshotpowerが0だったらキャンディ投入をキャンセル
+        if (shotPower <= 0) return;
 
         //プレハブからキャンディオブジェクトを生成
         GameObject candy = (GameObject)Instantiate(//引数３つ
@@ -94,5 +101,36 @@ public class Shooter : MonoBehaviour
 
         //Candyのストックを消費
         candyManager.ConsumeCandy();
+
+        //ShotPowerを消費
+        ConsumePower();
+    }
+
+    private void OnGUI()
+    {
+        GUI.color = Color.black;
+
+        //ShotPowerの残数を+の数で表示
+        string label = "";
+        for (int i = 0; i < shotPower; i++)
+        {
+            label = label + "+";
+        }
+        GUI.Label(new Rect(50, 65, 100, 30), label);
+    }
+
+    void ConsumePower()
+    {
+        //ShotPowerを消費すると同時に回復のカウントをスタート
+        shotPower--;
+        StartCoroutine(RecoverPower());
+        //5回連続でクリックすると同時に5個のコルーチンが走る
+    }
+
+    IEnumerator RecoverPower()
+    {
+        //一定数待った後にshotPowerを回復
+        yield return new WaitForSeconds(RecoverySeconds);
+        shotPower++;
     }
 }

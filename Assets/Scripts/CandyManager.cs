@@ -10,7 +10,7 @@ public class CandyManager : MonoBehaviour
     //現在のキャンディストック数
     public int candy = DefaultCandyAmount;
     //ストック回復までの残り秒数
-    int counter;
+    int counter;//0
 
     public void ConsumeCandy()
     {
@@ -61,8 +61,11 @@ public class CandyManager : MonoBehaviour
 
 
         //回復カウントしている時だけ秒数表示
-        if (counter > 0) label = label + "(" + counter + "s)";
-        //もしカウンターに数字が入っていたら
+        if (counter > 0)
+        {
+            label = label + "(" + counter + "s)";
+        }
+            //もしカウンターに数字が入っていたら
 
         GUI.Label(new Rect(50,50,100,30),label);
     }
@@ -73,6 +76,9 @@ public class CandyManager : MonoBehaviour
        //回復カウントをしていないときにカウントをスタートさせる
        if(candy < DefaultCandyAmount && counter <=0)
             //カウンターに値が入っていなかったら
+            //最初0が入っててコルーチンスタート
+            //コルーチンがスタートすると10が入ってカウントを始める
+            //カウンターが0でなくなるのでコルーチン作動止まる
         {
             StartCoroutine(RecoverCandy());
         }
