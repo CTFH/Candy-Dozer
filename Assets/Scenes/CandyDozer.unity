@@ -383,6 +383,7 @@ MonoBehaviour:
   - {fileID: 3574099618160969512, guid: 6ff7cc967fadb4b449b884da9d85b73e, type: 3}
   - {fileID: 3574099618160969512, guid: 127da03c08ef0564aabe403efa232de8, type: 3}
   - {fileID: 3574099618160969512, guid: 2fd82c3e3132aa4498e968d31fe95346, type: 3}
+  - {fileID: 609717676396543294, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e, type: 3}
   candyParentTransform: {fileID: 725981669}
   candyManager: {fileID: 1923583279}
   shotForce: 560
@@ -1208,9 +1209,10 @@ Transform:
   - {fileID: 817512648}
   - {fileID: 651308300}
   - {fileID: 1350885849}
-  - {fileID: 1053392303}
   - {fileID: 871473481}
   - {fileID: 56144654}
+  - {fileID: 1053392303}
+  - {fileID: 1816291679}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1600,6 +1602,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fd82c3e3132aa4498e968d31fe95346, type: 3}
+--- !u!1 &990393697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990393698}
+  - component: {fileID: 990393700}
+  - component: {fileID: 990393699}
+  m_Layer: 0
+  m_Name: CandyDestroyerReward 5
+  m_TagString: Gold
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &990393698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990393697}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -7, z: -7.5}
+  m_LocalScale: {x: 17, y: 1, z: 5}
+  m_Children: []
+  m_Father: {fileID: 1285437016}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &990393699
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990393697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &990393700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990393697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b427e127713c54f99e9996f4904907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candyManager: {fileID: 1923583279}
+  reward: 5
+  effectPrefab: {fileID: 5256765985809603647, guid: 29c0e7c32811653429f483542f0b40ec,
+    type: 3}
+  effectGoldPrefab: {fileID: 5256765985809603647, guid: 29c0e7c32811653429f483542f0b40ec,
+    type: 3}
+  effectRotation: {x: -90, y: 0, z: 0}
 --- !u!4 &1053392303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
@@ -2206,6 +2272,7 @@ Transform:
   m_Children:
   - {fileID: 1671397556}
   - {fileID: 1986306972}
+  - {fileID: 990393698}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2634,7 +2701,7 @@ GameObject:
   - component: {fileID: 1671397555}
   - component: {fileID: 1671397554}
   m_Layer: 0
-  m_Name: CandyDestroyerReward0
+  m_Name: CandyDestroyerReward 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,6 +2735,7 @@ MonoBehaviour:
   candyManager: {fileID: 1923583279}
   reward: 0
   effectPrefab: {fileID: 0}
+  effectGoldPrefab: {fileID: 0}
   effectRotation: {x: 0, y: 0, z: 0}
 --- !u!4 &1671397556
 Transform:
@@ -2733,7 +2801,7 @@ PrefabInstance:
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -2971,6 +3039,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775873728}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1816291678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 609717676396543294, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6952819108746935304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1816291679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6952819108746935304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1816291682
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816291678}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1857340386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2981,7 +3077,7 @@ PrefabInstance:
     - target: {fileID: 3574099618160969512, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_Name
-      value: CandyLemon
+      value: CandyLemon (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -3021,7 +3117,7 @@ PrefabInstance:
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -3090,7 +3186,7 @@ PrefabInstance:
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -3165,8 +3261,8 @@ GameObject:
   - component: {fileID: 1986306974}
   - component: {fileID: 1986306973}
   m_Layer: 0
-  m_Name: CandyDestroyerReward0 3
-  m_TagString: Untagged
+  m_Name: CandyDestroyerReward 3
+  m_TagString: Candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3213,6 +3309,8 @@ MonoBehaviour:
   candyManager: {fileID: 1923583279}
   reward: 3
   effectPrefab: {fileID: 6984984038599417712, guid: 4028f331e800fc540947b944e879994d,
+    type: 3}
+  effectGoldPrefab: {fileID: 6984984038599417712, guid: 4028f331e800fc540947b944e879994d,
     type: 3}
   effectRotation: {x: -90, y: 0, z: 0}
 --- !u!1 &2001730176
@@ -3714,3 +3812,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 308401342660062833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6952819108746935304
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 725981669}
+    m_Modifications:
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396503326, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396543294, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_Name
+      value: CandyGold
+      objectReference: {fileID: 0}
+    - target: {fileID: 609717676396543294, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e5b0d70cc40e5a44a5d722ddb0bab8e, type: 3}
