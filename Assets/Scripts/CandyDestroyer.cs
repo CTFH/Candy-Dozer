@@ -7,7 +7,6 @@ public class CandyDestroyer : MonoBehaviour
     public CandyManager candyManager;
     public int reward;
     public GameObject effectPrefab;
-    public GameObject effectGoldPrefab;
     public Vector3 effectRotation;
 
     private void OnTriggerEnter(Collider other)
@@ -24,11 +23,9 @@ public class CandyDestroyer : MonoBehaviour
             Destroy(other.gameObject);
                 //otherがなかったらCandyDestroyerが消えちゃう
 
-            if(effectPrefab !=null && effectGoldPrefab != null)
+            if(effectPrefab !=null)
                 //横に落ちた時がNull
             {
-                if (other.gameObject.tag == "Candy")
-                {
 
                     //Candyのポジションにエフェクトを生成
                     Instantiate(
@@ -44,15 +41,7 @@ public class CandyDestroyer : MonoBehaviour
                         //どの向きに物体を回転させるか（どの向きで登場させるか）
                         //Quaternionは４次元数
                         );
-                }
-                else
-                {
-                    Instantiate(
-                                effectGoldPrefab,
-                                other.transform.position,
-                                 Quaternion.Euler(effectRotation)
-                                 );
-                }
+                
             }
             }
     }
