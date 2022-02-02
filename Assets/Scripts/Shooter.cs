@@ -8,6 +8,7 @@ public class Shooter : MonoBehaviour
     const int RecoverySeconds = 3;
 
     int shotPower = MaxShotPower;
+    AudioSource shotSound;
 
     public GameObject[] candyPrefabs;//GameObject型でプレハブ登録
     public Transform candyParentTransform;//親子関係を結びたい　
@@ -30,6 +31,13 @@ public class Shooter : MonoBehaviour
     public float shotForce;
     public float shotTorque;//Toeque回転する力、回転力
     public float baseWidth;//StageObjectのBase（作成したやつ）のwidth
+
+    private void Start()
+    {
+        shotSound = GetComponent<AudioSource>();
+        //いきなりGetComponentはスクリプトがついているゲームオブジェクト
+        //（shooter）
+    }
 
     // Update is called once per frame
     void Update()
@@ -104,6 +112,8 @@ public class Shooter : MonoBehaviour
 
         //ShotPowerを消費
         ConsumePower();
+
+        shotSound.Play();
     }
 
     private void OnGUI()
