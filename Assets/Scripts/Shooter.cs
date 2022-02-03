@@ -13,9 +13,9 @@ public class Shooter : MonoBehaviour
     public GameObject[] candyPrefabs;//GameObject型でプレハブ登録
     public Transform candyParentTransform;//親子関係を結びたい　
     //GameObject型にするとcandyParent
-    //candy.transform.parent=getComponent<Transform>();
+    //candy.transform.parent=GetComponent<Transform>();
     //またはcandyParent.transformにしないといけない
-    //(getComponet.transformだけど、transoformだから省略できる)
+    //(GetComponet.transformだけど、transoformだから省略できる)
     //親にしたいオブジェクトのTransform componentが必要
     public CandyManager candyManager;
     //CandyManagerコンポーネントを持ったゲームオブジェクトをインスペクター上から登録できるようになる
