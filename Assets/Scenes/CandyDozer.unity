@@ -1208,9 +1208,9 @@ Transform:
   - {fileID: 817512648}
   - {fileID: 651308300}
   - {fileID: 1350885849}
-  - {fileID: 1053392303}
   - {fileID: 871473481}
   - {fileID: 56144654}
+  - {fileID: 1053392303}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2634,7 +2634,7 @@ GameObject:
   - component: {fileID: 1671397555}
   - component: {fileID: 1671397554}
   m_Layer: 0
-  m_Name: CandyDestroyerReward0
+  m_Name: CandyDestroyerReward 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2733,7 +2733,7 @@ PrefabInstance:
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -2981,7 +2981,7 @@ PrefabInstance:
     - target: {fileID: 3574099618160969512, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_Name
-      value: CandyLemon
+      value: CandyLemon (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -3021,7 +3021,7 @@ PrefabInstance:
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -3090,7 +3090,7 @@ PrefabInstance:
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3574099618161466120, guid: 6ff7cc967fadb4b449b884da9d85b73e,
         type: 3}
@@ -3165,8 +3165,8 @@ GameObject:
   - component: {fileID: 1986306974}
   - component: {fileID: 1986306973}
   m_Layer: 0
-  m_Name: CandyDestroyerReward0 3
-  m_TagString: Untagged
+  m_Name: CandyDestroyerReward 3
+  m_TagString: Candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
